@@ -2,6 +2,6 @@
 
 This folder will contain **Projects, Mini-Projects and Pyhton practice files**.
 
-<p align="right">
+<p align="center">
 <img src="https://th.bing.com/th/id/OIP.KnOS3vOcNhLla8LSZw4TugHaHa?pid=ImgDet&rs=1">
 </p>
