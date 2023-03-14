@@ -1,4 +1,4 @@
-# Excel To SQL Data-pipeline using Python – 
+# Append Excel Table To SQL Already Existed table Data-pipeline using Python – 
 The Usecase of Task – 
 
 If our Sales-Person fill data in Excel sheet. It should dump Excel data to SQL Database for already existed table – 
