@@ -1,4 +1,4 @@
-# Creating Lists to Dataframe and Matching List to see The Matched
+# Creating Lists to Dataframe and Matching Columns to see The Matches
 
 SQL = [1,2,3,4,5]
 Excel = [1,2,6,4,5]
