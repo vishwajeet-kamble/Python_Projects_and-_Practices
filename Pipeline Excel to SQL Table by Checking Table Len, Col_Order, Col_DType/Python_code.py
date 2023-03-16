@@ -16,6 +16,13 @@ import warnings
 warnings.simplefilter("ignore", UserWarning)
 
 
+#  C:/Users/vishwajeetkamble/Desktop/Rough Work Folder/Ridhima mam Task/Task 3 Python/test_excel.xlsx
+#  C:/Users/vishwajeetkamble/Desktop/Rough Work Folder/Ridhima mam Task/Task 3 Python/test_excel_dataorder_type_issue.xlsx
+# C:/Users/vishwajeetkamble/Desktop/Rough Work Folder/Ridhima mam Task/Task 3 Python/test_excel_order_issue.xlsx
+# C:\Users\vishwajeetkamble\Desktop\Rough Work Folder\Ridhima mam Task\Task 3 Python\test_excel_dec.xlsx
+# C:\Users\vishwajeetkamble\Desktop\Rough Work Folder\Ridhima mam Task\Task 3 Python\test_excel_colname_change.xlsx
+
+
 # Excel Table:
 print("Enter_Excel_path -")
 path = input()
@@ -23,7 +30,7 @@ path = input()
 print("")
 
 # Excel workbook path --
-#path = "test_excel.xlsx"
+#path = "C:\Users\vishwajeetkamble\Desktop\Rough Work Folder\Ridhima mam Task\Task 3 Python\test_excel.xlsx"
 
 # Open the workbook and define the worksheet
 workbook = openpyxl.load_workbook(path)
@@ -48,6 +55,8 @@ database = MySQLdb.connect (host="localhost", user = "root", passwd = "root", db
 # Get the cursor, which is used to traverse the database, line by line
 cursor = database.cursor()
 
+
+# loc_address = r"C:\Users\vishwajeetkamble\Desktop\Rough Work Folder\Ridhima mam Task\Task 3 Python\test_excel.xlsx"
 
 # Defining function to get Table, Column_DType, Column_name, Column_length
 def excel_tbl_col_dt_len(rpath): 
@@ -144,32 +153,6 @@ query = """INSERT INTO """ + table + """ VALUES (""" +  value_len + """)"""
 print("-" * 65)
 
 
-# Creating DataFrame for Matching SQL & Excel Columns
-Col_Match_df = pd.DataFrame({"SQL" :sql_column,
-                            "Excel" : excel_tbl_coln}, 
-                            columns=['SQL', 'Excel'])
-
-# print(Col_Match_df)
-# print(Col_Match_df.shape)
-
-# Column_match_SQL_Excel['Match Status'] Process -
-M_S = []
-match = 'Matched'
-N_match = 'Not-Matched'
-
-for i in range(0, Col_Match_df.shape[0]):
-    if Col_Match_df['SQL'][i] == Col_Match_df['Excel'][i]:
-        M_S.append(match)
-        
-    else:
-        M_S.append(N_match)
-
-# print(M_S)   
-Col_Match_df['Match_Status'] = M_S
-
-# print(Column_match_SQL_Excel)
-
-
 # Checking Column_length, Column_order, Dtype matching for Excel and SQl if Matching then Dumping Data - 
 if excel_tbl_coln_length == sql_column_len:
     
@@ -184,6 +167,46 @@ if excel_tbl_coln_length == sql_column_len:
             
             if excel_tbl_coln_dtypes[i] == sql_column_dtype[i]:
                 
+                # Creating DataFrame for Matching SQL & Excel Columns
+                Col_Match_df = pd.DataFrame({"SQL" :sql_column,
+                                             "Exl" : excel_tbl_coln,
+                                             "SQL_DType" : sql_column_dtype,
+                                             "Exl_DType" : excel_tbl_coln_dtypes},
+                                            columns=['SQL', "SQL_DType", 'Exl', "Exl_DType"])
+
+                # print(Col_Match_df)
+                # print(Col_Match_df.shape)
+
+                # Column_match_SQL_Excel['Match Status'] Process -
+                M_S = []
+                MD_S = []
+                match = 'Matched'
+                N_match = 'Not-Matched'
+
+                for j in range(0, Col_Match_df.shape[0]):
+                    if Col_Match_df['SQL'][j] == Col_Match_df['Exl'][j]:
+                        M_S.append(match)
+
+                    else:
+                        M_S.append(N_match)
+                
+                for m in range(0, Col_Match_df.shape[0]):
+                    if Col_Match_df['SQL_DType'][m] == Col_Match_df['Exl_DType'][m]:
+                        MD_S.append(match)
+
+                    else:
+                        MD_S.append(N_match)
+                        
+                        
+                Col_Match_df['C_MStatus'] = M_S
+                
+
+                # print(M_S)   
+                Col_Match_df['C_DType_MStatus'] = MD_S
+
+                # print(Column_match_SQL_Excel)
+
+
                 # print('Column_Datatype by Order Matched', i , "[", excel_tbl_coln_dtypes[i], " Excel_table ", "=", excel_tbl_coln_dtypes[i], " SQL_table ", "]")
             
                 i = i + 1
@@ -216,7 +239,9 @@ if excel_tbl_coln_length == sql_column_len:
             else:
                     
                 print('Column_DataType by Order Not Matched', "Index-" , i ,  "[ Excel Column Name - ", excel_tbl_coln[i], "DataType - ", excel_tbl_coln_dtypes[i], " Excel_table ", " <> ",  " SQL Column Name - ", sql_column_sort[i], "DataType - ", sql_column_dtype[i],"]")
-
+                print("")
+                print(Col_Match_df)
+                
                 break 
 
 
