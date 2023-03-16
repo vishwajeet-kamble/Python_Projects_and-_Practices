@@ -16,13 +16,6 @@ import warnings
 warnings.simplefilter("ignore", UserWarning)
 
 
-#  C:/Users/vishwajeetkamble/Desktop/Rough Work Folder/Ridhima mam Task/Task 3 Python/test_excel.xlsx
-#  C:/Users/vishwajeetkamble/Desktop/Rough Work Folder/Ridhima mam Task/Task 3 Python/test_excel_dataorder_type_issue.xlsx
-# C:/Users/vishwajeetkamble/Desktop/Rough Work Folder/Ridhima mam Task/Task 3 Python/test_excel_order_issue.xlsx
-# C:\Users\vishwajeetkamble\Desktop\Rough Work Folder\Ridhima mam Task\Task 3 Python\test_excel_dec.xlsx
-# C:\Users\vishwajeetkamble\Desktop\Rough Work Folder\Ridhima mam Task\Task 3 Python\test_excel_colname_change.xlsx
-
-
 # Excel Table:
 print("Enter_Excel_path -")
 path = input()
@@ -30,7 +23,7 @@ path = input()
 print("")
 
 # Excel workbook path --
-#path = "C:\Users\vishwajeetkamble\Desktop\Rough Work Folder\Ridhima mam Task\Task 3 Python\test_excel.xlsx"
+#path = "C:\Users\Task 3 Python\test_excel.xlsx"
 
 # Open the workbook and define the worksheet
 workbook = openpyxl.load_workbook(path)
@@ -54,9 +47,6 @@ database = MySQLdb.connect (host="localhost", user = "root", passwd = "root", db
 
 # Get the cursor, which is used to traverse the database, line by line
 cursor = database.cursor()
-
-
-# loc_address = r"C:\Users\vishwajeetkamble\Desktop\Rough Work Folder\Ridhima mam Task\Task 3 Python\test_excel.xlsx"
 
 # Defining function to get Table, Column_DType, Column_name, Column_length
 def excel_tbl_col_dt_len(rpath): 
