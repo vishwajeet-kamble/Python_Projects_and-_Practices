@@ -1,7 +1,26 @@
-## iPhone_Analysis_Mini_Project
+🚀 **iPhone Analysis Mini Project 📱📊**  
+In this mini-project, I performed a deep dive into an iPhone dataset, applying **Python** for data transformation, analysis, and visualization. Here’s a quick summary:
 
-*This Project contains Analysis on Data using Python Intermediate concept.*
+🔹 **ETL Process**:  
+- **Data Extraction**: Loaded iPhone product data (Model, Price, RAM, etc.)  
+- **Data Transformation**: Cleaned data, handled missing values, and created derived columns like **Discounted_Price** to enhance insights.  
 
-1. Analysis and Transformation of Apple_Product dataset
-2. Adding Derived/Logical Columns which will futher contribute to Analysis.
-3. Plotting Visuals for Quick Overview on data
+🔹 **Data Aggregation & Analysis**:  
+- Grouped data by **Model** and **RAM** to calculate key metrics (avg price, min/max values, count).  
+- Used **pivot tables** to uncover relationships between model, RAM, and pricing.  
+
+🔹 **Data Visualization**:  
+- Created **bar plots** and **line charts** to visualize **avg_price** by model and RAM.  
+- Enhanced visuals with **interactive charts** to highlight trends and insights.  
+
+🔹 **Key Skills**:  
+- **Data Wrangling & Transformation** using **Pandas**  
+- **Exploratory Data Analysis** with **Seaborn** and **Matplotlib**  
+- Created **actionable insights** from data for better decision-making.  
+
+🔹 **Objective**:  
+- **Gain insights** into iPhone pricing strategies and help businesses or individuals make informed decisions.
+
+📌 **Tools**: **Python**, **Pandas**, **NumPy**, **Seaborn**, **Matplotlib**
+
+💡 **Outcome**: Successfully created visualizations that tell a story about iPhone pricing trends and configurations.  
