@@ -1,0 +1,18 @@
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 62 entries, 0 to 61
+Data columns (total 11 columns):
+ #   Column               Non-Null Count  Dtype  
+---  ------               --------------  -----  
+ 0   Product Name         62 non-null     object 
+ 1   Product URL          62 non-null     object 
+ 2   Brand                62 non-null     object 
+ 3   Sale Price           62 non-null     int64  
+ 4   Mrp                  62 non-null     int64  
+ 5   Discount Percentage  62 non-null     int64  
+ 6   Number Of Ratings    62 non-null     int64  
+ 7   Number Of Reviews    62 non-null     int64  
+ 8   Upc                  62 non-null     object 
+ 9   Star Rating          62 non-null     float64
+ 10  Ram                  62 non-null     object 
+dtypes: float64(1), int64(5), object(5)
+memory usage: 5.5+ KB
